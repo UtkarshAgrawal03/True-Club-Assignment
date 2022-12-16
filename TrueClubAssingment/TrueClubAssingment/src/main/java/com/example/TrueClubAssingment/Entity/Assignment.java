@@ -1,0 +1,81 @@
+package com.example.TrueClubAssingment.Entity;
+
+import java.time.LocalDate;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name = "Assignment")
+public class Assignment {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String name;
+	private String address;
+	private int pincode;
+	private String state;
+	@CreationTimestamp
+	private LocalDate row_creation_timestamp;
+	public Assignment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Assignment(int id, String name, String address, int pincode, String state,
+			LocalDate row_creation_timestamp) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.pincode = pincode;
+		this.state = state;
+		this.row_creation_timestamp = row_creation_timestamp;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getPincode() {
+		return pincode;
+	}
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public LocalDate getRow_creation_timestamp() {
+		return row_creation_timestamp;
+	}
+	public void setRow_creation_timestamp(LocalDate row_creation_timestamp) {
+		this.row_creation_timestamp = row_creation_timestamp;
+	}
+	@Override
+	public String toString() {
+		return "Assignment [id=" + id + ", name=" + name + ", address=" + address + ", pincode=" + pincode + ", state="
+				+ state + ", row_creation_timestamp=" + row_creation_timestamp + "]";
+	}
+	
+}
